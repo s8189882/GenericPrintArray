@@ -1,9 +1,5 @@
 package generics.print.array;
 
-/*Given an array of Integer, Double and Character, write a program to print the same
-- Create PrintArray class and define toPrint method to print corresponding elements to stdout
- */
-
 public class PrintArray {
 	public static void main(String[] args) {
 		Integer[] intArray = {7, 14, 21, 28, 35, 42, 49};
@@ -15,23 +11,8 @@ public class PrintArray {
 		toPrint(charArray);
 	}
 	
-	
-	public static void toPrint(Integer[] inputArray) {
-		for (int element : inputArray) {
-			System.out.print(element+"\s");
-		}
-		System.out.println("\n");
-	}
-	
-	public static void toPrint(Double[] inputArray) {
-		for (double element : inputArray) {
-			System.out.print(element+"\s");
-		}
-		System.out.println("\n");
-	}
-	
-	public static void toPrint(Character[] inputArray) {
-		for (char element : inputArray) {
+	public static <E> void toPrint(E[] inputArray) {
+		for (E element : inputArray) {
 			System.out.print(element+"\s");
 		}
 		System.out.println("\n");
